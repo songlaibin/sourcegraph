@@ -86,6 +86,8 @@ func (r *campaignSpecResolver) ApplyPreview(ctx context.Context, args *graphqlba
 		LimitOffset: &db.LimitOffset{
 			Limit: int(args.First),
 		},
+		CurrentState: args.CurrentState,
+		Action:       args.Action,
 	}
 	if args.After != nil {
 		id, err := strconv.Atoi(*args.After)
